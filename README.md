@@ -24,30 +24,30 @@ A brief description of what this project does and its purpose.
 
 1. **Clone the Repository**:
 
-```
+```bash
 git clone https://github.com/omercanyy/EvolvingCreatures.git
 cd EvolvingCreatures
 ```
 
 2. **Setup a Virtual Environment** (Optional but Recommended):
 
-```
+```bash
 python -m venv venv
 ```
 
 - On Windows, activate with:
-  ```
+  ```bash
   .\venv\Scripts\activate
   ```
 
 - On macOS and Linux, activate with:
-  ```
+  ```bash
   source venv/bin/activate
   ```
 
 3. **Install Required Packages**:
 
-```
+```bash
 pip install -r requirements.txt
 ```
 
@@ -55,7 +55,7 @@ pip install -r requirements.txt
 
 Once you've installed all the prerequisites and required packages, you can run the simulation script:
 
-```
+```bash
 python run_simulation.py
 ```
 
@@ -73,10 +73,44 @@ Provide example use cases, configurations, or setups that showcase the project's
 
 Provide details on how others can contribute to this project. This can be in the form of bug fixes, feature proposals, pull requests, etc.
 
+## Developer Notes
+
+### Using Pre-commit Hooks
+
+This project utilizes `pre-commit` hooks to maintain code quality and consistency. The configuration for these hooks is located in `.github/devtools/precommit.yml`.
+
+#### Setup and Installation
+
+1. **Installation of pre-commit**:
+
+   ```bash
+   pip install pre-commit
+   ```
+
+2. **Install git hooks**:
+
+   Since we use a non-standard location for our `precommit.yml`, ensure you specify the config location during setup:
+
+   ```bash
+   pre-commit install --config=.github/devtools/precommit.yml
+   ```
+
+3. **Manual Check**:
+
+   Before making a commit, you can manually check your entire project against the hooks:
+
+   ```bash
+   pre-commit run --all-files --config=.github/devtools/precommit.yml
+   ```
+
+#### Note on Configuration Location
+
+For organizational purposes, the `precommit.yml` is stored in the `.github/devtools/` directory instead of the repository root. When interacting with `pre-commit`, always remember to provide the `--config` flag with the correct path.
+
 ## Acknowledgements
 
 This project is inspired by and based on [biosim4](https://github.com/davidrmiller/biosim4) by David R. Miller. The goal of this project is to reimplement the concepts originally in C++ in Python.
 
-## [TBD] License
+## License
 
-State the license under which your project is distributed, if any.
+See LICENSE file.
