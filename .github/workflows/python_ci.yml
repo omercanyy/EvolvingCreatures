@@ -1,4 +1,4 @@
-name: Python CI
+name: Docker CI
 
 on:
   pull_request:
@@ -10,31 +10,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.x
+      - name: Build Docker image
+        run: docker build -t evolving-creatures-app .
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: Lint with flake8 inside Docker container
+        run: docker run evolving-creatures-app flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
 
-      # Uncomment the following steps if you want linting and formatting checks
-      - name: Lint with flake8
-        run: |
-          pip install flake8
-          # Stop the build if there are Python syntax errors or undefined names
-          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-          # Exit-zero treats all errors as warnings. Set to exit-zero if you want linting to be a warning
-          flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+      - name: Check formatting with black inside Docker container
+        run: docker run evolving-creatures-app black --check .
 
-      - name: Check with black
-        run: |
-          pip install black
-          black --check .
-
-      - name: Test with unittest
-        run: python -m unittest discover
+      - name: Run unittests inside Docker container
+        run: docker run evolving-creatures-app python -m unittest discover
