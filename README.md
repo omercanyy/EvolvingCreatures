@@ -1,7 +1,7 @@
 # EvolvingCreatures
 
-![CI Status](https://img.shields.io/github/workflow/status/omercanyy/EvolvingCreatures/CI)
-![Pre-commit Status](https://img.shields.io/github/workflow/status/omercanyy/EvolvingCreatures/Pre-commit)
+![CI Status](https://img.shields.io/github/actions/workflow/status/omercanyy/EvolvingCreatures/CI.yml?branch=main)
+![Pre-commit Status](https://img.shields.io/github/actions/workflow/status/omercanyy/EvolvingCreatures/Pre-commit.yml?branch=main)
 ![GitHub stars](https://img.shields.io/github/stars/omercanyy/EvolvingCreatures.svg?style=social&label=Star&maxAge=2592000)
 ![GitHub issues](https://img.shields.io/github/issues/omercanyy/EvolvingCreatures.svg)
 ![GitHub last commit](https://img.shields.io/github/last-commit/omercanyy/EvolvingCreatures.svg)
