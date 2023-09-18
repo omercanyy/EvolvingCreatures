@@ -17,7 +17,7 @@ jobs:
         run: docker build -t evolving-creatures-app .
 
       - name: Lint with flake8 inside Docker container
-        run: docker run evolving-creatures-app flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        run: docker run evolving-creatures-app flake8
 
       - name: Check formatting with black inside Docker container
         run: docker run evolving-creatures-app black --check .
