@@ -1,13 +1,11 @@
 # EvolvingCreatures
 
-![CI Status](https://img.shields.io/github/actions/workflow/status/omercanyy/EvolvingCreatures/CI.yml?branch=main)
-![Pre-commit Status](https://img.shields.io/github/actions/workflow/status/omercanyy/EvolvingCreatures/Pre-commit.yml?branch=main)
+![CI Status](https://img.shields.io/github/actions/workflow/status/omercanyy/EvolvingCreatures/python_ci.yml?branch=main)
+![Pre-commit Status](https://img.shields.io/github/actions/workflow/status/omercanyy/EvolvingCreatures/precommit.yml?branch=main)
 ![GitHub stars](https://img.shields.io/github/stars/omercanyy/EvolvingCreatures.svg?style=social&label=Star&maxAge=2592000)
 ![GitHub issues](https://img.shields.io/github/issues/omercanyy/EvolvingCreatures.svg)
 ![GitHub last commit](https://img.shields.io/github/last-commit/omercanyy/EvolvingCreatures.svg)
 ![GitHub license](https://img.shields.io/github/license/omercanyy/EvolvingCreatures.svg)
-
-
 
 A brief description of what this project does and its purpose.
 
