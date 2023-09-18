@@ -8,7 +8,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -26,3 +25,18 @@ jobs:
 
       - name: Run unittests inside Docker container
         run: docker run evolving-creatures-app python -m unittest discover
+
+      # Ensure the context is the same as in pending-status.yml
+      - name: Set Status to Success
+        uses: actions/github-script@v5
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            github.repos.createCommitStatus({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              sha: context.sha,
+              state: 'success',
+              description: 'Checks passed',
+              context: 'CI' # Set the context to the same name as in pending-status.yml
+            })
